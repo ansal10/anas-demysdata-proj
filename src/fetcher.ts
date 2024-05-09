@@ -15,13 +15,13 @@ export const fetchRequiredTodos = async (numberOfTodos: number, threads: number)
     const endTime = Date.now();
     console.log(`Time taken to fetch ${numberOfTodos} todos with eventthreads: ${threads} , Timetaken: ${(endTime - startTime)} milli seconds`);
     const todos = todoChunks.flat();
-    // for (const todo of todos){
-    //     if (todo){
-    //         console.log(`Todo ID: ${todo.id}, Title: ${todo.title}, Completed: ${todo.completed}`);
-    //     }else{
-    //         console.log('Failed to fetch todo');
-    //     }
-    // }
+    for (const todo of todos){
+        if (todo){
+            console.log(`Todo ID: ${todo.id}, Title: ${todo.title}, Completed: ${todo.completed}`);
+        }else{
+            console.log('Failed to fetch todo');
+        }
+    }
     return todos;
 }
 
